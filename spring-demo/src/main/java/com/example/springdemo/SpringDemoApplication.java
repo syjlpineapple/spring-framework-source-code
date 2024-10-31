@@ -9,7 +9,6 @@ import org.springframework.context.ApplicationContext;
 public class SpringDemoApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringDemoApplication.class, args);
 		ApplicationContext context = SpringApplication.run(SpringDemoApplication.class, args);
 		MyService myService = context.getBean(MyService.class);
 		myService.say();
