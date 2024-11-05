@@ -56,7 +56,6 @@ public abstract class AbstractTypeHierarchyTraversingFilter implements TypeFilte
 	@Override
 	public boolean match(MetadataReader metadataReader, MetadataReaderFactory metadataReaderFactory)
 			throws IOException {
-
 		// This method optimizes avoiding unnecessary creation of ClassReaders
 		// as well as visiting over those readers.
 		if (matchSelf(metadataReader)) {

@@ -869,6 +869,7 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
 		// Iterate over a copy to allow for init methods which in turn register new bean definitions.
 		// While this may not be part of the regular factory bootstrap, it does otherwise work fine.
 		List<String> beanNames = new ArrayList<>(this.beanDefinitionNames);
+		beanNames.forEach(e->System.out.println("----- "+e));
 
 		// Trigger initialization of all non-lazy singleton beans...
 		for (String beanName : beanNames) {
@@ -1075,6 +1076,7 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
 
 	@Override
 	public void registerSingleton(String beanName, Object singletonObject) throws IllegalStateException {
+		System.out.println("@@@@@ "+beanName);
 		super.registerSingleton(beanName, singletonObject);
 		updateManualSingletonNames(set -> set.add(beanName), set -> !this.beanDefinitionMap.containsKey(beanName));
 		clearByTypeCache();

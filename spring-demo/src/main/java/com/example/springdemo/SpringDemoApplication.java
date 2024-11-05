@@ -10,6 +10,7 @@ public class SpringDemoApplication {
 
     public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(SpringDemoApplication.class, args);
+
 		MyService myService = context.getBean(MyService.class);
 		myService.say();
     }

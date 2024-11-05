@@ -64,7 +64,7 @@ public class AspectJTypeFilter implements TypeFilter {
 	@Override
 	public boolean match(MetadataReader metadataReader, MetadataReaderFactory metadataReaderFactory)
 			throws IOException {
-
+		System.out.println("3333333333");
 		String className = metadataReader.getClassMetadata().getClassName();
 		ResolvedType resolvedType = this.world.resolve(className);
 		return this.typePattern.matchesStatically(resolvedType);

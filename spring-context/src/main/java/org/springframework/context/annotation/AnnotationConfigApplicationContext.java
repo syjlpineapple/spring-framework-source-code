@@ -16,6 +16,7 @@
 
 package org.springframework.context.annotation;
 
+import java.util.Arrays;
 import java.util.function.Supplier;
 
 import org.springframework.beans.factory.config.BeanDefinitionCustomizer;
@@ -97,6 +98,9 @@ public class AnnotationConfigApplicationContext extends GenericApplicationContex
 	 */
 	public AnnotationConfigApplicationContext(String... basePackages) {
 		this();
+		Arrays.stream(basePackages).forEach(e->{
+			System.out.println("~~~~~ "+e);
+		});
 		scan(basePackages);
 		refresh();
 	}

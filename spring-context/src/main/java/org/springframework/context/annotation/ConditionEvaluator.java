@@ -68,6 +68,7 @@ class ConditionEvaluator {
 	 * @return if the item should be skipped
 	 */
 	public boolean shouldSkip(AnnotatedTypeMetadata metadata) {
+		System.out.println("----- "+shouldSkip(metadata, null));
 		return shouldSkip(metadata, null);
 	}
 

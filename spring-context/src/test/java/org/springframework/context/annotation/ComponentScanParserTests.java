@@ -183,6 +183,7 @@ public class ComponentScanParserTests {
 		 */
 		@Override
 		public boolean match(MetadataReader metadataReader, MetadataReaderFactory metadataReaderFactory) {
+			System.out.println("5555555555");
 			return metadataReader.getClassMetadata().getClassName().contains("Kustom");
 		}
 	}

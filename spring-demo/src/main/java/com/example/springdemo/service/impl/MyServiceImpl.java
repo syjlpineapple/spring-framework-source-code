@@ -1,7 +1,9 @@
 package com.example.springdemo.service.impl;
 
+import com.example.springdemo.service.MyFunctionService;
 import com.example.springdemo.service.MyService;
 import org.springframework.stereotype.Service;
+import org.springframework.util.ClassUtils;
 
 /**
  * @author li.zhi
@@ -12,5 +14,12 @@ public class MyServiceImpl implements MyService {
 	@Override
 	public void say() {
 		System.out.println("HiHiHi");
+		MyFunctionService myFunctionService = MyServiceImpl::hello;
+		myFunctionService.hello();
+	}
+
+	private static void hello() {
+		System.out.println("Hello Everyone");
+		System.out.println(ClassUtils.getDefaultClassLoader());
 	}
 }
